@@ -1,0 +1,19 @@
+#!/bin/bash
+file="lab12"
+f() {
+read -p "дата" date
+read -p "категория" category
+read -p "сумма" summ
+read -p "описание" description
+echo "$date $category $summ $description" >> "$file"
+}
+while true; do
+    echo "1-добавить 2-показать 0-выход"
+    read choice
+    case "$choice" in 
+         1) f ;;
+         2) echo "дата категория сумма описание"  
+            cat "$file" ;;
+         0) break ;;
+    esac
+done
